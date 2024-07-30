@@ -71,7 +71,8 @@ export const Name = styled.div`
 
 export const Keyword = styled.div`
   display: flex;
-  justify-content: flex-start; 
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start; 
   width: 343px;
   height: 105px;
@@ -81,19 +82,23 @@ export const Keyword = styled.div`
   border-radius: 10px;
   background: #FFF9C2;
   position: absolute;
+  padding: 10px;
 `;
 
-export const SmallBox = styled.div`
-  display: inline-flex;
-  margin-top: 20px;
-  margin-left: 18px;
-  padding: 5px 13px; 
+export const Small = styled.div`
+  padding: 5px 13px;
   flex-shrink: 0;
   border-radius: 30px;
   background: linear-gradient(180deg, #E1E1E1 0%, #FFFBA6 100%);
   font-size: 13px;
-  position: absolute;
+  z-index: 2;
 `;
+
+export const SmallOne = styled(Small)``;
+export const SmallTwo = styled(Small)``;
+export const SmallThree = styled(Small)``;
+export const SmallFour = styled(Small)``;
+export const SmallFive = styled(Small)``;
 
 export const Wrap = styled.div`
   display: flex;
@@ -196,13 +201,17 @@ export const Text = styled.div`
 
 export const Box = styled.div`
   margin-top: 10px;
-  margin-left: 30px;
+  margin-left: 15px;
   width: 345px;
   height: 50px; 
   flex-shrink: 0;
   border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  display: flex; /* 자식 요소를 수평으로 정렬하기 위해 flex 사용 */
+  align-items: center; /* 수직 가운데 정렬 */
+  padding-left: 15px;
   cursor: pointer;
 `;
 
@@ -210,13 +219,15 @@ export const Button = styled.div`
 `;
 
 export const ButtonImage = styled.div`
-  top:28px;
+  top:800px;
   left:113px;
-  postion: absolute;
+  position: absolute;
 `;
 
 export const ButtonText = styled.div`
-  margin-top: 31px;
+  top:805px;
+  left:142px;
+  position: absolute;
   color: #000;
   text-align: center;
   font-family: "Gothic A1";

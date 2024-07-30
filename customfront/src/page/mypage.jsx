@@ -87,13 +87,13 @@ const Mypage = () => {
       
       <m.Keyword>
         <m.Wrap>
-          <m.SmallBox>#20대</m.SmallBox>
-          <m.SmallBox>#여성</m.SmallBox>
+          <m.SmallOne>#20대</m.SmallOne>
+          <m.SmallTwo>#여성</m.SmallTwo>
         </m.Wrap>
         <m.Wrap2>
-          <m.SmallBox>#당뇨</m.SmallBox>
-          <m.SmallBox>#160~165cm</m.SmallBox>
-          <m.SmallBox>#60~65kg</m.SmallBox>
+          <m.SmallThree>#당뇨</m.SmallThree>
+          <m.SmallFour>#160~165cm</m.SmallFour>
+          <m.SmallFive>#60~65kg</m.SmallFive>
         </m.Wrap2>
       </m.Keyword>
 
@@ -126,7 +126,7 @@ const Mypage = () => {
       <m.Kit>
       🔥 후기를 작성하고, 키워드를 강화해요!
       </m.Kit>
-
+cd
       <m.Check>나의 리뷰 확인하기</m.Check>
       <m.Write>리뷰 작성하기</m.Write>
 
