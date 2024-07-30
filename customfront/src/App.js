@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './page/home';
-import Mypage from './page/mypage';
+
 import Pwchange from './page/pwchange';
 import Pwchange1 from './page/pwchange1';
 import Info2 from './page/info2';
@@ -11,7 +11,7 @@ import Changeinfo3 from './page/changeinfo3';
 import Main0 from './page/main0';
 import Main4 from './page/main4';
 import Login from './page/login';
-import Membership from './page/membership';
+
 import './App.css';
 import './index.css';
 
@@ -21,7 +21,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} /> {/* 기본 경로 처리 */}
-          <Route path="/mypage" element={<Mypage />} />
+          
           <Route path="/pwchange" element={<Pwchange />} />
           <Route path="/pwchange1" element={<Pwchange1 />} />
           <Route path="/info2" element={<Info2 />} />
@@ -31,7 +31,7 @@ function App() {
           <Route path="/main0" element={<Main0 />} />
           <Route path="/main4" element={<Main4 />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/membership" element={<Membership />} />
+          
 
         </Routes>
       </div>
