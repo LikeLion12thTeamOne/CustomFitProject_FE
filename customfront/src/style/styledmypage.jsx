@@ -5,7 +5,6 @@ export const Container = styled.div`
   margin: 0 auto;
   width: 393px;
   height: 924px;
-  margin-top: 0px;
   background: #fff;
 `;
 
@@ -19,18 +18,18 @@ export const Header = styled.div`
     cursor: pointer;
   }
   #logo {
-    display: absolute;
+    position: absolute;
     margin-top: 8px;
     cursor: pointer;
   }
   #alarm {
-    display: absolute;
+    position: absolute;
     margin-top: 3px;
     margin-left: 305px;
     cursor: pointer;
   }
   #menu {
-    display: absolute;
+    position: absolute;
     margin-top: 5px;
     margin-left: 343px;
     cursor: pointer;
@@ -215,19 +214,18 @@ export const Box = styled.div`
   cursor: pointer;
 `;
 
-export const Button = styled.div`
-`;
+export const Button = styled.div``;
 
 export const ButtonImage = styled.div`
-  top:800px;
-  left:113px;
   position: absolute;
+  top: 800px;
+  left: 113px;
 `;
 
 export const ButtonText = styled.div`
-  top:805px;
-  left:142px;
   position: absolute;
+  top: 805px;
+  left: 142px;
   color: #000;
   text-align: center;
   font-family: "Gothic A1";

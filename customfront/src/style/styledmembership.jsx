@@ -10,11 +10,12 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   #logo {
-    display: absolute;
+    position: absolute; /* 수정된 부분 */
     margin-right: -330px;
     margin-top: 3px;
   }
 `;
+
 
 export const Top = styled.div`
   text-align: center;
@@ -56,7 +57,7 @@ export const Label = styled.div`
 export const Label2 = styled.div`
   display: flex;
   margin-top: 50px;
-  color: #000;0
+  color: #000;
   font-size: 18px;
   font-weight: 500;
   padding-left: 20px;
@@ -104,7 +105,7 @@ export const InputBlank2 = styled.div`
     outline: none;
     width: 273px;
     margin-top: 17px;
-    margin-left: px;
+    margin-left: 0px; /* 수정된 부분 */
     color: #000;
     font-family: "Gothic A1";
     font-size: 13px;
@@ -116,11 +117,11 @@ export const InputBlank2 = styled.div`
   }
 `;
 
+
 export const Idbutton = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
-  flex-direction: center;
   text-align: center;
   margin-top: 45px;
   margin-left: 290px;
@@ -129,10 +130,11 @@ export const Idbutton = styled.div`
   flex-shrink: 0;
   border-radius: 10px;
   background: #535151;
-  span{
-  margin-top: 15px;
+  span {
+    margin-top: 15px;
   }
 `;
+
 
 export const Bottom = styled.div`
   display: flex;
