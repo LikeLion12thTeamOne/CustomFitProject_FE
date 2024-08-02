@@ -4,50 +4,48 @@ import * as l from "../style/styledmain2";
 
 const Main2 = () => {
   const navigate = useNavigate();
-
-  const goMain = () => {
-    navigate(`/`);
-  };
-
   const [isChecked, setIsChecked] = useState(false);
-
-  const toggleCheckbox = () => {
-    setIsChecked(!isChecked);
-  };
-
-  // List2의 아이템 상태 관리
-  const [list2Items] = useState([
-    { id: 1, name: "상품명1", manufacturer: "제조사A", size: "Ng" },
-    { id: 2, name: "상품명2", manufacturer: "제조사A", size: "Ng" },
-    { id: 3, name: "상품명3", manufacturer: "제조사A", size: "Ng" },
-    { id: 4, name: "상품명4", manufacturer: "제조사A", size: "Ng" },
-    { id: 5, name: "상품명5", manufacturer: "제조사A", size: "Ng" },
-    { id: 6, name: "상품명6", manufacturer: "제조사A", size: "Ng" },
-    { id: 7, name: "상품명7", manufacturer: "제조사A", size: "Ng" },
-    { id: 8, name: "상품명8", manufacturer: "제조사A", size: "Ng" },
-    { id: 9, name: "상품명9", manufacturer: "제조사A", size: "Ng" },
-    { id: 10, name: "상품명10", manufacturer: "제조사A", size: "Ng" },
-    { id: 11, name: "상품명11", manufacturer: "제조사A", size: "Ng" }
-  ]);
-
-  // Box2의 아이템 상태 관리
+  const [list2Items, setList2Items] = useState([]);
   const [box2Items, setBox2Items] = useState([
     { id: 1, name: "과자 1" },
     { id: 2, name: "과자 2" },
     { id: 3, name: "과자 3" },
     { id: 4, name: "과자 4" },
     { id: 5, name: "과자 5" }
-    //{ id: 6, name: "과자 6" }//
   ]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Box2의 개별 아이템 삭제 함수
+  const goMain = () => {
+    navigate(`/`);
+  };
+
+  const toggleCheckbox = () => {
+    setIsChecked(!isChecked);
+  };
+
   const deleteItemFromBox2 = (id) => {
     setBox2Items(box2Items.filter(item => item.id !== id));
   };
 
-  // Box2의 모든 아이템 삭제 함수
   const clearBox2Items = () => {
     setBox2Items([]);
+  };
+
+  const handleSearchInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(`/api/products?product_name=${searchTerm}`);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const data = await response.json();
+      setList2Items(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
   };
 
   return (
@@ -119,12 +117,17 @@ const Main2 = () => {
           alt="logo"
           width="30px"
         />
-        <input type="text" placeholder="검색어를 입력하세요." />
+        <input
+          type="text"
+          placeholder="검색어를 입력하세요."
+          value={searchTerm}
+          onChange={handleSearchInputChange}
+        />
         <img
           id="search"
           src={`${process.env.PUBLIC_URL}/logo/search.svg`}
           alt="search button"
-          onClick={goMain}
+          onClick={handleSearch}
         />
       </l.InputBlank>
 
@@ -138,10 +141,10 @@ const Main2 = () => {
 
         <l.List2>
           {list2Items.map((item) => (
-            <l.Keywordd key={item.id}>
-              <l.SmallBox3>{item.name}</l.SmallBox3>
+            <l.Keywordd key={item.product_id}>
+              <l.SmallBox3>{item.product_name}</l.SmallBox3>
               <l.SmallBox3>{item.manufacturer}</l.SmallBox3>
-              <l.SmallBox3>{item.size}</l.SmallBox3>
+              <l.SmallBox3>{item.Capacity}g</l.SmallBox3>
               <l.SmallBox4>
                 <l.Checkborder>
                   <l.Check isChecked={isChecked} onClick={toggleCheckbox}>
@@ -170,7 +173,7 @@ const Main2 = () => {
                       alt="delbutton"
                       width="21px"
                       height="22"
-                      onClick={() => deleteItemFromBox2(item.id)}  // 개별 아이템 삭제
+                      onClick={() => deleteItemFromBox2(item.id)}
                     />
                   </l.DelButton>
                 </l.SmallBox5>
@@ -184,7 +187,7 @@ const Main2 = () => {
               alt="trash"
               width="21px"
               height="22"
-              onClick={clearBox2Items}  // Box2 아이템 전체 삭제
+              onClick={clearBox2Items}
             />
           </l.Icon>
         </l.Box>

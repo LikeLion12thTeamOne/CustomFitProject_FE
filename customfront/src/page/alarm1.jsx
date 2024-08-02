@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as q from "../style/styledalarm1";
 
-//1
-//2
-//3
-//4
-//5
 const Alarm1 = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [notices, setNotices] = useState([]);
 
   const goMain = () => {
     navigate(`/`);
@@ -23,19 +20,30 @@ const Alarm1 = () => {
     setIsMenuOpen(false);
   };
 
-  // Box2의 아이템 상태 관리
-  const box2Items = [
-    { id: 1, text: "공지 제목입니다."},
-    { id: 2, text: "공지 제목입니다."},
-    { id: 3, text: "공지 제목입니다." },
-    { id: 4, text: "공지 제목입니다." },
-    { id: 5, text: "공지 제목입니다." },
-    { id: 6, text: "공지 제목입니다." },
-    { id: 7, text: "공지 제목입니다." },
-    { id: 8, text: "공지 제목입니다." },
-    { id: 9, text: "공지 제목입니다." },
-    { id: 10, text: "공지 제목입니다." },
-  ];
+  useEffect(() => {
+    const fetchNotices = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/myPage/notices/');
+        setNotices(response.data);
+      } catch (error) {
+        if (error.response) {
+          // 서버가 응답했지만 상태 코드는 2xx 범위에 있지 않음
+          console.error("Error response:", error.response);
+          console.error("Status:", error.response.status);
+          console.error("Data:", error.response.data);
+        } else if (error.request) {
+          // 요청이 만들어졌지만 응답을 받지 못함
+          console.error("Error request:", error.request);
+        } else {
+          // 요청을 설정하는 중에 문제가 발생
+          console.error("Error message:", error.message);
+        }
+        console.error("Error config:", error.config);
+      }
+    };
+
+    fetchNotices();
+  }, []);
 
   return (
     <q.Container>
@@ -145,19 +153,19 @@ const Alarm1 = () => {
       <q.Body>
         <q.Box>
           <q.Box2>
-            {box2Items.map((item) => (
+            {notices.map((item) => (
               <q.Keywordd key={item.id}>
                 <q.SmallBox5>
-                  <span style={{fontSize: "13px" }}>{item.text}</span>
+                  <span style={{ fontSize: "13px" }}>{item.title}</span>
                 </q.SmallBox5>
               </q.Keywordd>
             ))}
           </q.Box2>
         </q.Box>
-
       </q.Body>
     </q.Container>
   );
 };
 
 export default Alarm1;
+

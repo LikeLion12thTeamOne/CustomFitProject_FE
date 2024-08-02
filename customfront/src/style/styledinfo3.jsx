@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin: 0 auto;
   width: 393px;
   height: 852px;
-  background: pink;
+  background: #fff;
 `;
 
 export const Header = styled.div`
@@ -97,7 +97,8 @@ export const Box = styled.div`
 `;
 
 export const SmallBox5 = styled.div`
-  width: 48%; 
+  width: 160px; 
+  height: 162px;
   margin-bottom: 10px; 
   position: relative;
   display: flex;
@@ -122,7 +123,7 @@ export const SmallBox5 = styled.div`
 export const SmallBox6 = styled(SmallBox5)``;
 
 export const Button = styled.div`
-  margin-top: 15px;
+  margin-top: 480px;
   cursor: pointer;
 `;
 

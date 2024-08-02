@@ -77,8 +77,8 @@ export const InputBlank = styled.div`
     border: none;
     outline: none;
     width: 273px;
-    margin-top: 17px;
-    margin-left: -50px;
+    margin-top: 15px;
+    margin-left: -30px;
     color: #000;
     font-family: "Gothic A1";
     font-size: 13px;
@@ -89,34 +89,6 @@ export const InputBlank = styled.div`
     background: none;
   }
 `;
-
-export const InputBlank2 = styled.div`
-  margin-top: 7px;
-  margin-left: 30px;
-  margin-bottom: 20px;
-  width: 255px;
-  height: 50px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
-  input {
-    border: none;
-    outline: none;
-    width: 273px;
-    margin-top: 17px;
-    margin-left: 0px; /* 수정된 부분 */
-    color: #000;
-    font-family: "Gothic A1";
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 250;
-    line-height: 150%; /* 19.5px */
-    letter-spacing: -0.143px;
-    background: none;
-  }
-`;
-
 
 export const Idbutton = styled.div`
   position: absolute;
@@ -143,7 +115,7 @@ export const Bottom = styled.div`
   margin-top: 10px;
   margin-left: 30px;
   width: 330px;
-  height: 138px;
+  height: 190px;
   flex-shrink: 0;
   border-radius: 10px;
   border: 0.3px solid #000;
@@ -151,28 +123,21 @@ export const Bottom = styled.div`
 
 export const BottomText = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row; 
+  align-items: center;
   text-align: left;
-  background: #a7faf0;
+  background: none;
   margin-bottom: 30px;
-  #check {
-    display: flex;
-    position: absolute;
-    margin-top: 22px;
-    margin-left: 50px;
-  }
-  #checkbox {
-    display: flex;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 20px;
-    cursor: pointer;
+  margin-left: 25px;
+
+  input {
+    position: relative; 
+    margin: 0 10px 0 0; 
   }
 `;
 
-export const Button = styled.div`
-  margin-top: 50px;
-  margin-left: 28px;
+export const Button = styled.button`
+  margin-top: 100px;
   width: 334px;
   height: 45px;
   flex-shrink: 0;
@@ -180,17 +145,18 @@ export const Button = styled.div`
   background: linear-gradient(90deg, #edd719 0%, #a7faf0 100%);
   box-shadow: 0px 0px 4px 2px rgba(76, 75, 75, 0.25);
   cursor: pointer;
-  &:hover {
-    background-color: #dadada;
-  }
+  border: none;
 `;
 
 export const ButtonText = styled.div`
-  margin-top: 15px;
+  display: flex;
+  position: relative;
   color: #000;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   font-family: "Gothic A1";
-  font-size: 15px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 550;
   line-height: normal;

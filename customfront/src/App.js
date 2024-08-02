@@ -5,6 +5,8 @@ import Main2 from './page/main2';
 import Main3 from './page/main3';
 import First from './page/first';
 import Login from './page/login';
+import Mypage from './page/mypage';
+import Membership from './page/membership';
 import Review from './page/review';
 import Reviewcheck1 from './page/reviewcheck1';
 import Reviewcheck2 from './page/reviewcheck2';
@@ -32,6 +34,8 @@ function App() {
           <Route path="/Main3" element={<Main3 />} />
           <Route path="/First" element={<First />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Mypage" element={<Mypage />} />
+          <Route path="/Membership" element={<Membership />} />
           <Route path="/Review" element={<Review />} />
           <Route path="/Reviewcheck1" element={<Reviewcheck1 />} />
           <Route path="/Reviewcheck2" element={<Reviewcheck2 />} />

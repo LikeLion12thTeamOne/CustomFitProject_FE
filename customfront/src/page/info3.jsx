@@ -42,8 +42,11 @@ const Info3 = () => {
           <span style={{ fontWeight: "bold", fontSize: "20px" }}>
             키워드 선택
           </span>
-          을 진행해 주세요!<br />
-          <span style={{ fontWeight: "400", fontSize: "12px", color: "#ED4C19" }}>
+          을 진행해 주세요!
+          <br />
+          <span
+            style={{ fontWeight: "400", fontSize: "12px", color: "#ED4C19" }}
+          >
             키워드 선택이 완료되어야 다음 단계로 이동이 가능합니다.
           </span>
         </b.Top>
@@ -59,18 +62,23 @@ const Info3 = () => {
         <b.Box>
           <b.Box2>
             {[
-              "당뇨",
-              "근손실",
-              "비만",
-              "고혈압",
-            ].map((health1Range, index) => (
+              { name: "당뇨", position: { top: "50px", left: "9px" } },
+              { name: "근손실", position: { top: "50px", left: "190px" } },
+              { name: "비만", position: { top: "250px", left: "9px" } },
+              { name: "고혈압", position: { top: "250px", left: "190px" } },
+            ].map((item, index) => (
               <b.Keywordd key={index}>
                 <b.SmallBox5
                   isClicked={selectedBox === index}
                   onClick={() => handleBoxClick(index)}
+                  style={{
+                    position: "absolute",
+                    top: item.position.top,
+                    left: item.position.left,
+                  }}
                 >
                   <span style={{ fontWeight: "bold", fontSize: "15px" }}>
-                    {health1Range}
+                    {item.name}
                   </span>
                 </b.SmallBox5>
               </b.Keywordd>

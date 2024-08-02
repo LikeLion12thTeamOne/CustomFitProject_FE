@@ -93,22 +93,6 @@ export const Keywordd = styled.div`
   justify-content: center;
 `;
 
-export const Kit = styled.div`
-  display: inlin-block
-  positon: absolute;
-  width: 200px;
-  height: 10px;
-  flex-shrink: 0;
-  text-align: left;
-  margin-top: -120px;
-  margin-left: 15px;
-  margin-bottom: -5px;
-  font-family: "Gothic A1";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`;
 
 export const Body = styled.div`
   display: flex;
@@ -118,45 +102,6 @@ export const Body = styled.div`
   height: 150px;
 `;
 
-export const Box = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 393px;
-  height: 153px;
-  flex-shrink: 0;
-  background: #fff9c2;
-`;
-
-export const Box2 = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 370px;
-  height: 130px;
-  gap: 7px;
-  margin-left: -205px;
-  overflow-y: auto;
-  scrollbar-width: none;
-  background-color: none;
-  border: none;
-`;
-
-export const SmallBox5 = styled.div`
-  position: relative;
-  display: flex;
-  margin-left: -18px;
-  width: 179px;
-  height: 99px;
-  flex-shrink: 0;
-  font-size: 13px;
-  border-radius: 10px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
 
 export const Under = styled.div`
   text-align: center;
@@ -189,6 +134,19 @@ export const Button = styled.div`
   border-radius: 10px;
   border: 0.5px solid #fff9c2;
   background: #fff9c2;
+  box-shadow: 0px 0px 2px 2px rgba(173, 170, 170, 0.25);
+  cursor: pointer;
+`;
+
+export const ButtonTwo = styled.div`
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 85%;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 0.5px solid #fff9c2;
+  background: #F2F2F2;
   box-shadow: 0px 0px 2px 2px rgba(173, 170, 170, 0.25);
   cursor: pointer;
 `;
